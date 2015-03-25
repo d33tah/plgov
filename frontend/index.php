@@ -40,6 +40,14 @@ $(function() {
 </head>
 
 <body>
+<h1>Edycje polskiej Wikipedii z rządowych adresów IP</h1>
+<p>Poniższa lista zawiera edycje artykułów polskiej Wikipedii z rządowych adresów IP.
+Jeśli chcesz dowiedzieć się o niej więcej, kliknij
+<a href="https://github.com/d33tah/plgov/blob/master/README-PL.md">TUTAJ.</a></p>
+<p><strong>Prośba:</strong> przekazując link znajomemu, skopiuj go PRZED przekierowaniem.
+Aby to zrobić, kliknij link prawym przyciskiem myszy i wybierz "Kopiuj adres". W ten sposób
+osoba, która otrzyma ten link podbije licznik obejrzeń dla tej edycji i pomożesz odróżnić
+nieistotne edycje od tych ciekawszych. Dzięki!</p>
 <table id="tablesorter">
 <thead>
 <tr>
