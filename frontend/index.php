@@ -11,9 +11,13 @@
         $ip = $link->real_escape_string($_SERVER['REMOTE_ADDR']);
         $sql = "INSERT INTO plgov_ips(entry_id, ip) VALUES ('" . $entry_id . "', '" . $ip . "')";
         $result = $link->query($sql);
-        $result = $link->query("SELECT url FROM plgov_entries e WHERE entry_id='". $entry_id ."';");
+        $result = $link->query("SELECT url, entry_id FROM plgov_entries e WHERE entry_id='". $entry_id ."';");
         $row = $result->fetch_array(MYSQLI_ASSOC);
-        header("Location: " . $row['url']);
+        if (!isset($_GET['m'])) {
+            header("Location: " . $row['url']);
+        } else {
+            header("Location: https://pl.m.wikipedia.org/wiki/Specjalna:MobileDiff/" . $row['entry_id']);
+        }
         die();
     }
 ?>
@@ -57,7 +61,7 @@ $(function() {
 <td><?php print $row['rdns']; ?></td>
 <td><?php print $row['title']; ?></td>
 <td><?php print $row['timestamp']; ?></td>
-<td><a href="?id=<?php print $row['entry_id']; ?>">LINK</a> <a href="https://pl.m.wikipedia.org/wiki/Specjalna:MobileDiff/<?php print $row['entry_id']; ?>">[M]</a></td></td>
+<td><a href="?id=<?php print $row['entry_id']; ?>">LINK</a> <a href="?m=1&id=<?php print $row['entry_id']; ?>">[M]</a></td></td>
 <td><?php print $row['count']; ?></td>
 <!-- <td><a href="<?php print $row['url']; ?>">LINK</a></td> -->
 </tr>
