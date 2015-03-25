@@ -35,9 +35,9 @@ def parse_file(f, iplist):
         element.clear()
 
 def main():
-    with open("iplist-govonly.txt") as f:
-        iplist = map(lambda x: x.rstrip(), f.readlines())
-        #iplist = iptools.IpRangeList(*map(lambda x: x.rstrip(), f.readlines()))
+    with open(sys.argv[2]) as iplist_f:
+        iplist = map(lambda x: x.rstrip(), iplist_f.readlines())
+        #iplist = iptools.IpRangeList(*map(lambda x: x.rstrip(), iplist_f.readlines()))
     with bz2.BZ2File(sys.argv[1]) as f:
         parse_file(f, iplist)
 
