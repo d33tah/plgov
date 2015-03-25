@@ -57,7 +57,7 @@ $(function() {
 <td><?php print $row['rdns']; ?></td>
 <td><?php print $row['title']; ?></td>
 <td><?php print $row['timestamp']; ?></td>
-<td><a href="?id=<?php print $row['entry_id']; ?>">LINK</a></td>
+<td><a href="?id=<?php print $row['entry_id']; ?>">LINK</a> <a href="https://pl.m.wikipedia.org/wiki/Specjalna:MobileDiff/<?php print $row['entry_id']; ?>">[M]</a></td></td>
 <td><?php print $row['count']; ?></td>
 <!-- <td><a href="<?php print $row['url']; ?>">LINK</a></td> -->
 </tr>
