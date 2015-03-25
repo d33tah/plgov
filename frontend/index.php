@@ -26,7 +26,10 @@
 <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
 <script type="text/javascript">
 $(function() {
-    $("#tablesorter").tablesorter({debug: true, sortList: [[5,1]]});
+    $("#tablesorter").tablesorter({
+//        debug: true,
+        sortList: [[5,1]]
+    });
 });
 </script>
 <style>td { border: 1px black solid; } </style>
