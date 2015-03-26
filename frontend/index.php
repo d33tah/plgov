@@ -56,7 +56,7 @@ będę mógł łatwo przenieść tę stronę na inny serwer i przekierować tam 
 <table id="tablesorter">
 <thead>
 <tr>
-<th>IP</th>
+<th>IP [WHOIS]</th>
 <th>rDNS</th>
 <th>Tytuł</th>
 <th>Data</th>
@@ -70,11 +70,11 @@ będę mógł łatwo przenieść tę stronę na inny serwer i przekierować tam 
     while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
 <tr>
-<td><?php print $row['ip']; ?> (<a href="https://who.is/whois-ip/ip-address/<?php print $row['ip']; ?>">?</a>)</td>
+<td><?php print $row['ip']; ?> <abbr title="WHOIS">[<a href="https://who.is/whois-ip/ip-address/<?php print $row['ip']; ?>">W</a>]</abbr></td>
 <td><?php print $row['rdns']; ?></td>
 <td><?php print $row['title']; ?></td>
 <td><?php print $row['timestamp']; ?></td>
-<td><a href="?id=<?php print $row['entry_id']; ?>">LINK</a> <a href="?m=1&id=<?php print $row['entry_id']; ?>">[M]</a></td></td>
+<td><a href="?m=1&id=<?php print $row['entry_id']; ?>">LINK</a> <abbr title="dwie kolumny"><a href="?id=<?php print $row['entry_id']; ?>">[2]</a></a></td></td>
 <?php if ($docount) { ?><td><?php print $row['count']; ?></td><?php } ?>
 <!-- <td><a href="<?php print $row['url']; ?>">LINK</a></td> -->
 </tr>
