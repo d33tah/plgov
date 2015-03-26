@@ -5,6 +5,7 @@ import sys
 import bz2
 import re
 import urllib
+import IPy
 
 IP_RE_STR = ("^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25"
              "[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]"
@@ -13,10 +14,13 @@ IP_RE = re.compile(IP_RE_STR)
 URL_FORMAT = "https://pl.wikipedia.org/w/index.php?title=%s&diff=prev&oldid=%s"
 TAG_PREFIX = "{http://www.mediawiki.org/xml/export-0.10/}"
 
+def to_ip(ip):
+    return IPy.IP(ip)
+
 def handle_tuple(iplist, ip, title, timestamp, id_):
     if not IP_RE.match(ip):
         print("Interesting IP: %s" % ip)
-    if ip in iplist:
+    if to_ip(ip) in iplist:
         title_quoted = urllib.quote(title.encode('utf8'))
         print(ip, title, timestamp,
               URL_FORMAT % (title_quoted, id_))
@@ -45,13 +49,13 @@ def scan_tuples(iplist):
                 continue
             line = line.rstrip()
             ip, title, timestamp, url = literal_eval(line)
-            if ip in iplist:
+            if to_ip(ip) in iplist:
                 print(line)
 
 def main():
     sys.stderr.write("Loading IP list...")
     with open(sys.argv[2]) as iplist_f:
-        iplist = set(map(lambda x: x.rstrip(), iplist_f.readlines()))
+        iplist = IPy.IPSet(map(lambda x: IPy.IP(x.rstrip()), iplist_f.readlines()))
     sys.stderr.write("done.\n")
     #scan_tuples(iplist)
     with bz2.BZ2File(sys.argv[1]) as f:
