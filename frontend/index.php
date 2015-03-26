@@ -20,6 +20,7 @@
         }
         die();
     }
+    $docount = !isset($_GET['nocount']);
 ?>
 <html>
 
@@ -44,12 +45,14 @@ $(function() {
 <p>Poniższa lista zawiera edycje artykułów polskiej Wikipedii z rządowych adresów IP.
 Jeśli chcesz dowiedzieć się o niej więcej, kliknij
 <a href="https://github.com/d33tah/plgov/blob/master/README-PL.md">TUTAJ.</a></p>
+<?php if ($docount) { ?>
 <p><strong>Prośba:</strong> przekazując link znajomemu, skopiuj go PRZED przekierowaniem.
 Aby to zrobić, kliknij link prawym przyciskiem myszy i wybierz "Kopiuj adres". W ten sposób
 osoba, która otrzyma ten link podbije licznik obejrzeń dla tej edycji i pomożesz odróżnić
 nieistotne edycje od tych ciekawszych. Także przekazując adres tej strony,
 lepiej użyć <a href="https://git.io/plgov-random">https://git.io/plgov</a> - dzięki temu
 będę mógł łatwo przenieść tę stronę na inny serwer i przekierować tam wszystkich. Dzięki!</p>
+<?php } ?>
 <table id="tablesorter">
 <thead>
 <tr>
@@ -58,7 +61,7 @@ będę mógł łatwo przenieść tę stronę na inny serwer i przekierować tam 
 <th>Tytuł</th>
 <th>Data</th>
 <th>Link</th>
-<th>Obejrzało osób</th>
+<?php if ($docount) { ?><th>Obejrzało osób</th><?php } ?>
 </tr>
 </thead>
 <?
@@ -72,7 +75,7 @@ będę mógł łatwo przenieść tę stronę na inny serwer i przekierować tam 
 <td><?php print $row['title']; ?></td>
 <td><?php print $row['timestamp']; ?></td>
 <td><a href="?id=<?php print $row['entry_id']; ?>">LINK</a> <a href="?m=1&id=<?php print $row['entry_id']; ?>">[M]</a></td></td>
-<td><?php print $row['count']; ?></td>
+<?php if ($docount) { ?><td><?php print $row['count']; ?></td><?php } ?>
 <!-- <td><a href="<?php print $row['url']; ?>">LINK</a></td> -->
 </tr>
 <?php
