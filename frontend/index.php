@@ -1,5 +1,5 @@
 <?php
-    ob_start();
+    ob_start("ob_gzhandler");
     error_reporting(E_ALL);
     require_once("config.php");
 
