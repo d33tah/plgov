@@ -14,6 +14,15 @@ IP_RE = re.compile(IP_RE_STR)
 URL_FORMAT = "https://pl.wikipedia.org/w/index.php?title=%s&diff=prev&oldid=%s"
 TAG_PREFIX = "{http://www.mediawiki.org/xml/export-0.10/}"
 
+def handle_tuple(iplist, ip, title, timestamp, id_):
+    if not IP_RE.match(ip):
+        print("Interesting IP: %s" % ip)
+    if ip in iplist:
+        title_quoted = urllib.quote(title.encode('utf8'))
+        print(ip, title, timestamp,
+              URL_FORMAT % (title_quoted, id_))
+
+
 def parse_file(f, iplist):
     title = None
     i = 0
@@ -26,12 +35,7 @@ def parse_file(f, iplist):
             title = ''.join(element.itertext())
         if element.tag ==  TAG_PREFIX + "ip":
             ip = ''.join(element.itertext())
-            if not IP_RE.match(ip):
-                print("Interesting IP: %s" % ip)
-            if ip in iplist:
-                title_quoted = urllib.quote(title.encode('utf8'))
-                print(ip, title, timestamp,
-                      URL_FORMAT % (title_quoted, id_))
+            handle_tuple(iplist, ip, title, timestamp, id_)
         element.clear()
 
 def main():
