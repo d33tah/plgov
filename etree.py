@@ -41,7 +41,7 @@ def parse_file(f, iplist):
 def main():
     sys.stderr.write("Loading IP list...")
     with open(sys.argv[2]) as iplist_f:
-        iplist = map(lambda x: x.rstrip(), iplist_f.readlines())
+        iplist = set(map(lambda x: x.rstrip(), iplist_f.readlines()))
         #iplist = iptools.IpRangeList(*map(lambda x: x.rstrip(), iplist_f.readlines()))
     sys.stderr.write("done.\n")
     with bz2.BZ2File(sys.argv[1]) as f:
