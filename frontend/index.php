@@ -46,6 +46,9 @@ $(function() {
 Jeśli chcesz dowiedzieć się o niej więcej, kliknij
 <a href="https://github.com/d33tah/plgov/blob/master/README-PL.md">TUTAJ.</a></p>
 <?php if ($docount) { ?>
+
+<p>Twój adres IP jest nagrywany w celach statystycznych. Jeśli nie wyrażasz na to zgody, opuść tę stronę.</p>
+
 <p><strong>Prośba:</strong> przekazując link znajomemu, skopiuj go PRZED przekierowaniem.
 Aby to zrobić, kliknij link prawym przyciskiem myszy i wybierz "Kopiuj adres". W ten sposób
 osoba, która otrzyma ten link podbije licznik obejrzeń dla tej edycji i pomożesz odróżnić
