@@ -38,12 +38,24 @@ def parse_file(f, iplist):
             handle_tuple(iplist, ip, title, timestamp, id_)
         element.clear()
 
+def scan_tuples(iplist):
+    from ast import literal_eval
+    with open(sys.argv[1]) as f:
+        for line in f:
+            if line.startswith("Interesting IP: "):
+                continue
+            line = line.rstrip()
+            ip, title, timestamp, url = literal_eval(line)
+            if ip in iplist:
+                print(line)
+
 def main():
     sys.stderr.write("Loading IP list...")
     with open(sys.argv[2]) as iplist_f:
         iplist = set(map(lambda x: x.rstrip(), iplist_f.readlines()))
         #iplist = iptools.IpRangeList(*map(lambda x: x.rstrip(), iplist_f.readlines()))
     sys.stderr.write("done.\n")
+    #scan_tuples(iplist)
     with bz2.BZ2File(sys.argv[1]) as f:
         parse_file(f, iplist)
 
