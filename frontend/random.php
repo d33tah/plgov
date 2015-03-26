@@ -28,7 +28,9 @@ Aby zobaczyć następną zmianę, odśwież tę stronę (klawisz F5).</p>
 <p><strong>Prośba:</strong> przekazując link znajomemu, skopiuj go PRZED przekierowaniem. Aby to
 zrobić, kliknij link prawym przyciskiem myszy i wybierz "Kopiuj adres". W ten
 sposób osoba, która otrzyma ten link podbije licznik obejrzeń dla tej edycji
-i pomożesz odróżnić nieistotne edycje od tych ciekawszych. Dzięki!</p>
+i pomożesz odróżnić nieistotne edycje od tych ciekawszych. Także przekazując adres tej strony,
+lepiej użyć <a href="https://git.io/plgov-random">https://git.io/plgov-random</a> - dzięki temu
+będę mógł łatwo przenieść tę stronę na inny serwer i przekierować tam wszystkich. Dzięki!</p>
 
 <p>Link: <a href="index.php?id=<?php print $row['entry_id']; ?>"><?php print $row['url']; ?></a>.
 Domena: <?php print $row['rdns']; ?>.
