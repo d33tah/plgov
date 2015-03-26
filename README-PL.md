@@ -20,10 +20,10 @@ Pierwsza kolumna, adres IP, to numer komputera w Internecie, który dokonał tej
 zmiany. W tej samej kolumnie znajduje się łącze oznaczone [W], gdzie można
 wygodnie sprawdzić w internetowym rejestrze WHOIS, do kogo w tym momencie
 należy ten adres. Druga kolumna to rDNS, czyli nazwa hosta przypisana do tego
-adresu IP, ustawiona przez administratora sieci. Trzecia i czwarta kolumna 
+adresu IP, ustawiona przez administratora sieci. Trzecia i czwarta kolumna
 mówią o tym, jaki artykuł i kiedy zmieniono.
 
-Piąta kolumna jest prawdopodobnie najbardziej interesująca - to łącza do 
+Piąta kolumna jest prawdopodobnie najbardziej interesująca - to łącza do
 polskiej Wikipedii, gdzie można sprawdzić, czego konkretnie dotyczyła ta
 pojedyncza zmiana. Pierwszy link, nazwany "LINK", prowadzi do mobilnej wersji
 strony, która może być czytelniejsza dla osób nie znających szczegółów
@@ -51,7 +51,7 @@ miejsca. Komputer był podłączony do szerokopasmowego internetu oraz miał
 zainstalowany system Fedora Linux w wersji 21. Proces zaczęto od pobrania
 czterech archiwów Wikipedii z dnia 19 lutego 2015r., oraz archiwum rDNS firmy
 Rapid7 ("Sonar") z dnia 11 marca 2015r., dostępnych w dniu badania pod
-poniższymi adresami: 
+poniższymi adresami:
 
 https://dumps.wikimedia.org/plwiki/20150219
 (pliki: "All pages with complete page edit history (.bz2)")
@@ -88,7 +88,7 @@ Z technicznego punktu widzenia, część zmian mogła być wykonana przez osoby 
 będące pracownikami instytucji rządowych. Możliwe jest, że - przykładowo -
 komputer podłączony do sieci Ministerstwa Finansów udostępniał publiczną sieć
 bezprzewodową, z której korzystały osoby nieuprawnione. Dodatkowo, istnieje
-prawdopodobieństwo, że któryś z komputerów nie należących do rządowej 
+prawdopodobieństwo, że któryś z komputerów nie należących do rządowej
 infrastruktury ustawił swój adres rDNS na taki, który kończy się na .gov.pl,
 choć jest to w ocenie autora mało prawdopodobne.
 
