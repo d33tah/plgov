@@ -5,7 +5,6 @@ import sys
 import bz2
 import re
 import urllib
-#import iptools
 
 IP_RE_STR = ("^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25"
              "[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]"
@@ -53,7 +52,6 @@ def main():
     sys.stderr.write("Loading IP list...")
     with open(sys.argv[2]) as iplist_f:
         iplist = set(map(lambda x: x.rstrip(), iplist_f.readlines()))
-        #iplist = iptools.IpRangeList(*map(lambda x: x.rstrip(), iplist_f.readlines()))
     sys.stderr.write("done.\n")
     #scan_tuples(iplist)
     with bz2.BZ2File(sys.argv[1]) as f:
