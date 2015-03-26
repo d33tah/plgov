@@ -27,8 +27,8 @@
 <head>
 <meta charset="utf-8">
 <title>Edycje polskiej Wikipedii z rządowych adresów IP</title>
-<script type="text/javascript" src="http://tablesorter.com/jquery-latest.js"></script>
-<script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="https://d33tah.github.io/plgov/js/jquery-latest.js"></script>
+<script type="text/javascript" src="https://d33tah.github.io/plgov/js/__jquery.tablesorter.min.js"></script>
 <script type="text/javascript">
 $(function() {
     $("#tablesorter").tablesorter({
