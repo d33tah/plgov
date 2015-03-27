@@ -14,13 +14,15 @@ IP_RE = re.compile(IP_RE_STR)
 URL_FORMAT = "https://pl.wikipedia.org/w/index.php?title=%s&diff=prev&oldid=%s"
 TAG_PREFIX = "{http://www.mediawiki.org/xml/export-0.10/}"
 
-def to_ip(ip):
-    return IPy.IP(ip)
+def in_iplist(ip, iplist):
+    return IPy.IP(ip) in iplist
+    #common = IPy.IPSet([IPy.IP(ip)]) & iplist
+    #return common != IPy.IPSet([])
 
 def handle_tuple(iplist, ip, title, timestamp, id_):
     if not IP_RE.match(ip):
         print("Interesting IP: %s" % ip)
-    if to_ip(ip) in iplist:
+    if in_iplist(ip, iplist):
         title_quoted = urllib.quote(title.encode('utf8'))
         print(ip, title, timestamp,
               URL_FORMAT % (title_quoted, id_))
@@ -49,7 +51,7 @@ def scan_tuples(iplist):
                 continue
             line = line.rstrip()
             ip, title, timestamp, url = literal_eval(line)
-            if to_ip(ip) in iplist:
+            if in_iplist(ip, iplist):
                 print(line)
 
 def main():
