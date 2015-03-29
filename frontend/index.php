@@ -26,7 +26,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Edycje polskiej Wikipedii z rządowych adresów IP</title>
+<title>Edycje polskiej Wikipedii z adresów IP polskiej administracji publicznej</title>
 <script type="text/javascript" src="https://d33tah.github.io/plgov/js/jquery-latest.js"></script>
 <script type="text/javascript" src="https://d33tah.github.io/plgov/js/jquery.tablesorter.min.js"></script>
 <script type="text/javascript">
@@ -41,9 +41,9 @@ $(function() {
 </head>
 
 <body>
-<div style="float: right"><a href="rules.html">Regulamin</a> | <a href="privacy.html">Polityka prywatności</a></div>
-<h1>Edycje polskiej Wikipedii z rządowych adresów IP</h1>
-<p>Poniższa lista zawiera edycje artykułów polskiej Wikipedii z rządowych adresów IP.
+<div style="float: right"><a href="random.php">Losuj edycję</a> | <a href="rules.html">Regulamin</a> | <a href="privacy.html">Polityka prywatności</a></div>
+<h1>Edycje polskiej Wikipedii z adresów IP polskiej administracji publicznej</h1>
+<p>Poniższa lista zawiera edycje artykułów polskiej Wikipedii z adresów IP polskiej administracji publicznej.
 Jeśli chcesz dowiedzieć się o niej więcej, kliknij
 <a href="https://github.com/d33tah/plgov/blob/master/README-PL.md">TUTAJ.</a></p>
 <?php if ($docount) { ?>
