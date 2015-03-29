@@ -72,7 +72,7 @@ będę mógł łatwo przenieść tę stronę na inny serwer i przekierować tam 
     while($row = $result->fetch_array(MYSQLI_ASSOC)) {
 ?>
 <tr>
-<td><?php print $row['ip']; ?> <abbr title="WHOIS">[<a href="https://who.is/whois-ip/ip-address/<?php print $row['ip']; ?>">W</a>]</abbr></td>
+<td><?php print $row['ip']; ?> <abbr title="WHOIS">[<a href="https://whois.domaintools.com/<?php print $row['ip']; ?>">W</a>]</abbr></td>
 <td><?php print $row['rdns']; ?></td>
 <td><?php print $row['title']; ?></td>
 <td><?php print $row['timestamp']; ?></td>
