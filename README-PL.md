@@ -2,11 +2,11 @@ plgov - o projekcie
 ===================
 
 plgov jest projektem, który pozwala na przeszukanie całej historii Wikipedii
-pod kątem edycji stron dokonanych przez polski rząd. W tym celu odczytuje on
-publicznie dostępne archiwum zmian Wikipedii i filtruje je, szukając poprawek
-naniesionych przez niezarejestrowanych użytkowników, których adres IP należy
-do wskazanej listy. Następnie możliwe jest przygotowanie raportu, takiego jak
-ten dostępny na stronie: https://git.io/plgov
+pod kątem edycji stron dokonanych przez polską administrację publiczną. W tym
+celu odczytuje on publicznie dostępne archiwum zmian Wikipedii i filtruje je,
+szukając poprawek naniesionych przez niezarejestrowanych użytkowników, których
+adres IP należy do wskazanej listy. Następnie możliwe jest przygotowanie
+raportu, takiego jak ten dostępny na stronie: https://git.io/plgov
 
 Jak czytać ten raport?
 ======================
@@ -74,7 +74,7 @@ Na ile wiarygodne są te dane?
 
 Aby pozwolić na uczciwą ocenę tych danych, należy zwrócić uwagę na kilka wad
 w aktualnej metodzie pozyskiwania danych. Przede wszystkim, informacja o tym,
-czy dany adres IP należy do instytucji rządowych, została wykonana w oparciu
+czy dany adres IP należy do administracji publicznej, została wykonana w oparciu
 o aktualny zbiór rDNS, podczas gdy część zmian została naniesiona kilka lat
 temu. W tym czasie dany adres IP mógł należeć do innego właściciela, dlatego
 im dawniej zostały naniesione dane poprawki do Wikipedii, tym mniej wiarygodne
@@ -85,12 +85,12 @@ rDNS kończący się na ".gov.pl". Raport nie zawiera także zmian dokonanych
 przez zarejestrowanych użytkowników.
 
 Z technicznego punktu widzenia, część zmian mogła być wykonana przez osoby nie
-będące pracownikami instytucji rządowych. Możliwe jest, że - przykładowo -
+będące pracownikami instytucji publicznych. Możliwe jest, że - przykładowo -
 komputer podłączony do sieci Ministerstwa Finansów udostępniał publiczną sieć
 bezprzewodową, z której korzystały osoby nieuprawnione. Dodatkowo, istnieje
-prawdopodobieństwo, że któryś z komputerów nie należących do rządowej
-infrastruktury ustawił swój adres rDNS na taki, który kończy się na .gov.pl,
-choć jest to w ocenie autora mało prawdopodobne.
+prawdopodobieństwo, że któryś z komputerów nie należących do infrastruktury
+administracji publicznej ustawił swój adres rDNS na taki, który kończy się na
+.gov.pl, choć jest to w ocenie autora mało prawdopodobne.
 
 Niezależnie od wyżej wspomnianych problemów, projekt został wykonany z dużą
 starannością, a jego wyniki pracy można odtworzyć.
