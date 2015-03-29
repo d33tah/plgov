@@ -41,7 +41,7 @@ $(function() {
 </head>
 
 <body>
-<div style="float: right"><a href="random.php">Losuj edycję</a> | <a href="rules.html">Regulamin</a> | <a href="privacy.html">Polityka prywatności</a></div>
+<div style="float: right"><a href="random/">Losuj edycję</a> | <a href="rules.html">Regulamin</a> | <a href="privacy.html">Polityka prywatności</a></div>
 <h1>Edycje polskiej Wikipedii z adresów IP polskiej administracji publicznej</h1>
 <p>Poniższa lista zawiera edycje artykułów polskiej Wikipedii z adresów IP polskiej administracji publicznej.
 Jeśli chcesz dowiedzieć się o niej więcej, kliknij
